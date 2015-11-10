@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Mapa WirelessPT</title>
+	<link rel="stylesheet" href="leaflet/leaflet.css" />
+	<script src="leaflet/leaflet.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<script type="text/javascript">
+	window.onload = function(){
+		
+		var map = L.map('map', {
+			center: [39.34,-8.15], // Start Map Center
+			zoom: 7,
+		});
+
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '<a href="https://wirelesspt.net">WirelessPT.net</a> | Portugal Mesh Network Map',
+		}).addTo(map)
+
+
+// Blue Icon 
+		var blueIcon = L.icon({
+			iconUrl: 'images/marker-icon.png',
+			shadowUrl: 'images/marker-shadow.png',
+
+		iconSize: [16.66, 27.33],
+		iconAnchor: [8, 27.33],
+		popupAnchor: [1, -34],
+		shadowSize: [27.33, 27.33]
+		});
+
+// Brown Icon 
+		var brownIcon = L.icon({
+			iconUrl: 'images/marker-icon-brown.png',
+			shadowUrl: 'images/marker-shadow.png',
+
+		iconSize: [16.66, 27.33],
+		iconAnchor: [8, 27.33],
+		popupAnchor: [1, -34],
+		shadowSize: [27.33, 27.33]
+		});
+
+// Mesh locations
+
+	// Marinha Grande
+	// var marker = L.marker([39.752218,-8.931899], {icon: brownIcon}).addTo(map); // san 
+
+	// Moita (Marinha Grande)
+	var marker = L.marker([39.704766,-8.941203], {icon: blueIcon}).addTo(map); // mig 
+	// var marker = L.marker([39.702395,-8.945845], {icon: brownIcon}).addTo(map); // Vinagre Gas
+	
+	// Burinhosa (Marinha Grande)
+	// var marker = L.marker([39.696575,-8.975764], {icon: brownIcon}).addTo(map); // Land's Hause Bungalows	 
+
+	// Moitas Venda (Alcanena)
+        var marker = L.marker([39.491811,-8.662655], {icon: blueIcon}).addTo(map); // cv1
+        var marker = L.marker([39.491892,-8.662585], {icon: blueIcon}).addTo(map); // cv2
+        var marker = L.marker([39.492676,-8.662535], {icon: blueIcon}).addTo(map); // lav
+        var marker = L.marker([39.491851,-8.660829], {icon: blueIcon}).addTo(map); // cv3
+        var marker = L.marker([39.492354,-8.660338], {icon: blueIcon}).addTo(map); // pad
+        var marker = L.marker([39.491810,-8.656085], {icon: blueIcon}).addTo(map); // zjo
+        var marker = L.marker([39.493680,-8.657866], {icon: blueIcon}).addTo(map); // toi
+        var marker = L.marker([39.493618,-8.661135], {icon: blueIcon}).addTo(map); // mer
+        var marker = L.marker([39.493854,-8.661820], {icon: blueIcon}).addTo(map); // mar
+        var marker = L.marker([39.494818,-8.661687], {icon: blueIcon}).addTo(map); // cro
+        var marker = L.marker([39.495256,-8.660499], {icon: blueIcon}).addTo(map); // els
+        var marker = L.marker([39.496046,-8.661176], {icon: blueIcon}).addTo(map); // nil
+        var marker = L.marker([39.497084,-8.660106], {icon: blueIcon}).addTo(map); // nun
+        var marker = L.marker([39.495356,-8.663836], {icon: blueIcon}).addTo(map); // dan
+        var marker = L.marker([39.494840,-8.663304], {icon: blueIcon}).addTo(map); // pmx
+        var marker = L.marker([39.494607,-8.663572], {icon: blueIcon}).addTo(map); // isi
+        var marker = L.marker([39.493249,-8.661323], {icon: blueIcon}).addTo(map); // jca
+        var marker = L.marker([39.496263,-8.659796], {icon: blueIcon}).addTo(map); // nev
+	var marker = L.marker([39.495207,-8.655764], {icon: blueIcon}).addTo(map); // drd
+
+        // Goldra de Baixo - Algarve
+    	// var marker = L.marker([37.115059,-7.993265], {icon: brownIcon}).addTo(map); // ale
+
+	// Lisboa
+	// var marker = L.marker([38.739483,-9.120788], {icon: brownIcon}).addTo(map); // ccbs
+
+// End of Mesh locations
+
+	}
+	</script>
+</head>
+
+<body>
+	<div id="map"></div>
+</body>
+</html>
